@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 如果没有在Spring的配置文件中进行配置，那么同样是可以在这里进行配置的别名的，这样就不需要写全
+	限定类名
+ -->
+<!-- <typeAlias type="com.someapp.model.User" alias="User"/> -->
+
+<!-- 这里的namespace就是dao接口的权限的类名 -->
+<!-- 这里需要注意的是 # 和 $ 的区别，$一般用在动态拼接SQL语句的 -->
+<mapper namespace="com.xiaochen.dao.IStudyDao">
+	<select id="searchQuestionByDescrible" resultType="Question">
+        select userid,problemid,publishdatetime,problemdescrible,problemcontent,
+        issolved,problemtype,imageurls
+        from question where problemdescrible like #{describle}
+    </select>
+    <select id="searchQuestionByType" resultType="Question">
+        select userid,problemid,publishdatetime,problemdescrible,problemcontent,
+        issolved,problemtype,imageurls
+        from question where problemtype = #{type}
+    </select>
+    
+    <select id="searchQuestionByNoSolve" resultType="Question">
+        select userid,problemid,publishdatetime,problemdescrible,problemcontent,
+        issolved,problemtype,imageurls
+        from question where issolved = #{issolved}
+    </select>
+    <select id="getQuestionByUserId" resultType="Question">
+        select userid,problemid,publishdatetime,problemdescrible,problemcontent,
+        issolved,problemtype,imageurls
+        from question where userid = #{userid}
+    </select>
+    
+    <select id="getQuestionByUserIdIsSolve" resultType="Question">
+        select userid,problemid,publishdatetime,problemdescrible,problemcontent,
+        issolved,problemtype,imageurls
+        from question where userid = #{userid} and issolved = #{issolved}
+    </select>
+    
+    <select id="publishQuestion" parameterType="Question">
+    	insert into question(userid,problemid,publishdatetime,problemdescrible,problemcontent, issolved,problemtype,imageurls)
+    	values(#{userid},#{problemid},#{publishdatetime},#{problemdescrible},#{problemcontent},
+    	#{issolved},#{problemtype},#{imageurls})
+    </select>
+    
+    <delete id="deleteQuestion">
+    	delete from question where problemid = #{problemid} and userid = #{userid}
+    </delete>
+</mapper>
