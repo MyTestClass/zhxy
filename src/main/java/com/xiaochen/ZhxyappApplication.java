@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class ZhxyappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ZhxyappApplication.class, args);
+		//
 //		List<User> list = new ArrayList<>();
 //		for(int i=0;i<10;i++) {
 //			list.add(new User(""+i,i,new Date()));
