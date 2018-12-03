@@ -2,6 +2,8 @@ package com.xiaochen.dao.idleobject.enums;
 
 /**
  * TODO:闲置物品是否已经售出
+ * 0-已销售
+ * 1-未销售
  * @author:KangYong 2018年12月2日 下午11:10:10
  */
 public enum IdleObjectSellStatusEnum {

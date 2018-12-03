@@ -8,7 +8,7 @@ import com.xiaochen.dao.idleobject.model.IdleObjectModel;
  * TODO:用户管理自己的闲置物品
  * @author:KangYong 2018年12月2日 下午11:17:53
  */
-public interface IUserIdleObjectDao {
+public interface UserIdleObjectMapper {
 	/**
 	 * TODO:通过闲置物品的类型去查询
 	 * @param idleObjectType
@@ -55,12 +55,19 @@ public interface IUserIdleObjectDao {
 	IdleObjectModel getIdleObjectById(String userId);
 	
 	/**
+	 * TODO:根据闲置物品的id获取闲置物品的详细信息
+	 * @param userId
+	 * @return
+	 * @author:KangYong  下午9:22:30 
+	 */
+	IdleObjectModel getIdleObjectDetailById(Integer idleObjectId);
+	
+	/**
 	 * TODO:更新自己发布的闲置物品
 	 * @param idleobject
 	 * @author:KangYong  下午11:13:55 
 	 */
 	void updatedleObject(IdleObjectModel idleobject);
-	
 	
 	/**
 	 * TODO:发布闲置物品

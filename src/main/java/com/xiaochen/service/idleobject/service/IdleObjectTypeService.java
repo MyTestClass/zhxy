@@ -1,4 +1,4 @@
-package com.xiaochen.dao.idleobject.mapper;
+package com.xiaochen.service.idleobject.service;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import com.xiaochen.dao.idleobject.model.IdleObjectTypeModel;
  * TODO:管理闲置物品的类型
  * @author:KangYong 2018年12月2日 下午11:20:33
  */
-public interface IIdleObjectTypeDao {
+public interface IdleObjectTypeService {
 	/**
 	 * TODO:插入闲置物品的类型
 	 * @param idleObjectTypeModel
